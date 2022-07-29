@@ -50,11 +50,11 @@ public class TunisairSpecification {
     }
 
     /**
-     * Passenger count equals
+     * Passenger count maximum
      * @param expression
      * @return
      */
-    public static Specification<TunisairFlight> passengerCountContains(int expression) {
-        return (root, query, builder) -> builder.equal(root.get("passengerCount"), expression);
+    public static Specification<TunisairFlight> passengerCountLessOrEqual(int expression) {
+        return (root, query, builder) -> builder.lessThanOrEqualTo(root.get("passengerCount"), expression);
     }
 }

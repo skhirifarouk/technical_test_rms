@@ -22,109 +22,114 @@ public class NouvelairFlight {
     /**
      * Airline company
      */
-    private String airline;
+    private String carrier;
 
     /**
-     * Price
+     * Base price
      */
-    private double price;
+    private double basePrice;
 
     /**
-     * Cabin class
+     * Tax
      */
-    private String cabinclass;
+    private double tax;
+
+    /**
+     * Discount
+     */
+    private double discount;
+
     @Column(length = 3)
 
     /**
      * Departure airport : ISO country code
      */
     @ValidCountryCode
-    private String departureAirportCode;
+    private String departureAirportName;
 
     /**
      * Destination airport : ISO country code
      */
     @ValidCountryCode
     @Column(length = 3)
-    private String destinationAirportCode;
+    private String destinationAirportName;
 
     /**
      * Departure date
      */
-    private Date departureDate;
+    private Date outboundDateTime;
 
     /**
      * Arrival date
      */
-    private Date arrivalDate;
+    private Date inboundDateTime;
+
+    /**
+     * Number of adults
+     */
+    private int numberOfAdults;
 
     public NouvelairFlight() {
     }
 
-    public NouvelairFlight(String airline, double price, String cabinclass, String departureAirportCode, String destinationAirportCode, Date departureDate, Date arrivalDate) {
-        this.airline = airline;
-        this.price = price;
-        this.cabinclass = cabinclass;
-        this.departureAirportCode = departureAirportCode;
-        this.destinationAirportCode = destinationAirportCode;
-        this.departureDate = departureDate;
-        this.arrivalDate = arrivalDate;
+    public NouvelairFlight(String carrier, double basePrice, double tax, double discount, String departureAirportName, String destinationAirportName, Date outboundDateTime, Date inboundDateTime, int numberOfAdults) {
+        this.carrier = carrier;
+        this.basePrice = basePrice;
+        this.tax = tax;
+        this.discount = discount;
+        this.departureAirportName = departureAirportName;
+        this.destinationAirportName = destinationAirportName;
+        this.outboundDateTime = outboundDateTime;
+        this.inboundDateTime = inboundDateTime;
+        this.numberOfAdults = numberOfAdults;
     }
 
-    public String getAirline() {
-        return airline;
+    public String getCarrier() {
+        return carrier;
     }
 
-    public void setAirline(final String airline) {
-        this.airline = airline;
+    public void setCarrier(final String carrier) {
+        this.carrier = carrier;
     }
 
-    public double getPrice() {
-        return price;
+    public double getBasePrice() {
+        return basePrice;
     }
 
-    public void setPrice(final double price) {
-        this.price = price;
+    public void setBasePrice(final double basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public String getCabinclass() {
-        return cabinclass;
+    public String getDepartureAirportName() {
+        return departureAirportName;
     }
 
-    public void setCabinclass(final String cabinclass) {
-        this.cabinclass = cabinclass;
+    public void setDepartureAirportName(final String departureAirportName) {
+        this.departureAirportName = departureAirportName;
     }
 
-    public String getDepartureAirportCode() {
-        return departureAirportCode;
+    public String getDestinationAirportName() {
+        return destinationAirportName;
     }
 
-    public void setDepartureAirportCode(final String departureAirportCode) {
-        this.departureAirportCode = departureAirportCode;
+    public void setDestinationAirportName(final String destinationAirportName) {
+        this.destinationAirportName = destinationAirportName;
     }
 
-    public String getDestinationAirportCode() {
-        return destinationAirportCode;
+    public Date getOutboundDateTime() {
+        return outboundDateTime;
     }
 
-    public void setDestinationAirportCode(final String destinationAirportCode) {
-        this.destinationAirportCode = destinationAirportCode;
+    public void setOutboundDateTime(Date outboundDateTime) {
+        this.outboundDateTime = outboundDateTime;
     }
 
-    public Date getDepartureDate() {
-        return departureDate;
+    public Date getInboundDateTime() {
+        return inboundDateTime;
     }
 
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public Date getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(Date arrivalDate) {
-        this.arrivalDate = arrivalDate;
+    public void setInboundDateTime(Date inboundDateTime) {
+        this.inboundDateTime = inboundDateTime;
     }
 
     public long getId() {
@@ -133,5 +138,29 @@ public class NouvelairFlight {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public int getNumberOfAdults() {
+        return numberOfAdults;
+    }
+
+    public void setNumberOfAdults(int numberOfAdults) {
+        this.numberOfAdults = numberOfAdults;
     }
 }

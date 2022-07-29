@@ -33,7 +33,9 @@ public class TunisairService {
                         .and(StringUtils.isEmpty(request.getDepartureDate()) ? null :
                                 TunisairSpecification.departureDateFrom(request.getDepartureDate()))
                         .and(StringUtils.isEmpty(request.getReturnDate()) ? null :
-                                TunisairSpecification.returnDateTo(request.getReturnDate()));
+                                TunisairSpecification.returnDateTo(request.getReturnDate()))
+                        .and(request.getPassengerCount() == 0 ? null :
+                                TunisairSpecification.passengerCountLessOrEqual(request.getPassengerCount()));
         return tunisairRepository.findAll(specification);
     }
 

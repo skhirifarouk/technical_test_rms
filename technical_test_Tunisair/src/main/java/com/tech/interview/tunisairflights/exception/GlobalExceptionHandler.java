@@ -4,6 +4,7 @@ package com.tech.interview.tunisairflights.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -39,6 +40,19 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(BindException.class)
     public ResponseEntity<?> bindExcpetionHandler(BindException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+
+    }
+
+    /**
+     * Validation exception handler : 400
+     * @param ex
+     * @param request
+     * @return
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> methodArgumentNotValidExcpetionHandler(MethodArgumentNotValidException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 

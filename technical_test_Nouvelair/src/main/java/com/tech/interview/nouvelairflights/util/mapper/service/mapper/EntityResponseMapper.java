@@ -10,12 +10,13 @@ import org.mapstruct.Mapping;
  */
 @Mapper
 public interface EntityResponseMapper {
-    @Mapping(source = "airline", target = "airline")
-    @Mapping(source = "price", target = "price")
-    @Mapping(source = "cabinclass", target = "cabinclass")
-    @Mapping(source = "departureAirportCode", target = "departureAirportCode")
-    @Mapping(source = "destinationAirportCode", target = "destinationAirportCode")
-    @Mapping(source = "departureDate", target = "departureDate", dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-    @Mapping(source = "arrivalDate", target = "arrivalDate", dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+    @Mapping(source = "carrier", target = "carrier")
+    @Mapping(source = "basePrice", target = "basePrice")
+    @Mapping(source = "tax", target = "tax")
+    @Mapping(source = "discount", target = "discount")
+    @Mapping(source = "departureAirportName", target = "departureAirportName")
+    @Mapping(source = "destinationAirportName", target = "destinationAirportName")
+    @Mapping(source = "outboundDateTime", target = "outboundDateTime", dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+    @Mapping(source = "inboundDateTime", target = "inboundDateTime", dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     NouvelairResponse entityToResponseMapper(NouvelairFlight nouvelairFlight);
 }

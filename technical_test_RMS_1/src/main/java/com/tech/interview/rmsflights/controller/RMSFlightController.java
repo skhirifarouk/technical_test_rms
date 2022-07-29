@@ -2,9 +2,9 @@ package com.tech.interview.rmsflights.controller;
 
 import com.tech.interview.rmsflights.domain.nouvelair.NouvelairRequest;
 import com.tech.interview.rmsflights.domain.nouvelair.NouvelairResponse;
-import com.tech.interview.rmsflights.service.RMSService;
+import com.tech.interview.rmsflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.rmsflights.proxy.TunisairServiceProxy;
 import io.swagger.annotations.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,22 +19,17 @@ import java.util.List;
 @RequestMapping("/flight")
 public class RMSFlightController {
 
-    /**
-     * Service bean
-     */
-    @Autowired
-    RMSService NouvelairService;
-
+    private final TunisairServiceProxy serviceProxy;
+    public RMSFlightController(TunisairServiceProxy serviceProxy) {
+        this.serviceProxy = serviceProxy;
+    }
     /**
      * Get all data
      * @return
      */
     @GetMapping("/all")
-    @ApiOperation(value = "Finds all flights",
-            response = NouvelairResponse.class,
-            responseContainer = "List")
-    public ResponseEntity<List<NouvelairResponse>> getAll() {
-        return null;
+    public ResponseEntity<List<TunisairResponse>> getAll() {
+        return serviceProxy.getAll();
     }
 
 

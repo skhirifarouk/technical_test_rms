@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tech.interview.tunisairflights.util.validator.country.ValidCountryCode;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 /**
@@ -33,6 +34,7 @@ public class TunisairFlight {
     /**
      * Cabin class
      */
+    @Pattern(regexp = "E|B", flags = Pattern.Flag.CASE_INSENSITIVE)
     private String cabinclass;
     @Column(length = 3)
 
@@ -59,10 +61,15 @@ public class TunisairFlight {
      */
     private Date arrivalDate;
 
+    /**
+     * PassengerCount
+     */
+    private int passengerCount;
+
     public TunisairFlight() {
     }
 
-    public TunisairFlight(String airline, double price, String cabinclass, String departureAirportCode, String destinationAirportCode, Date departureDate, Date arrivalDate) {
+    public TunisairFlight(String airline, double price, String cabinclass, String departureAirportCode, String destinationAirportCode, Date departureDate, Date arrivalDate, int passengerCount) {
         this.airline = airline;
         this.price = price;
         this.cabinclass = cabinclass;
@@ -70,6 +77,7 @@ public class TunisairFlight {
         this.destinationAirportCode = destinationAirportCode;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
+        this.passengerCount = passengerCount;
     }
 
     public String getAirline() {
@@ -134,5 +142,13 @@ public class TunisairFlight {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getPassengerCount() {
+        return passengerCount;
+    }
+
+    public void setPassengerCount(int passengerCount) {
+        this.passengerCount = passengerCount;
     }
 }

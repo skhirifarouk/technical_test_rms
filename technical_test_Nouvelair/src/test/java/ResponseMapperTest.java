@@ -18,12 +18,14 @@ public class ResponseMapperTest {
 
     @Test
     public void givenEntiyToResponse_whenMaps_thenCorrect() {
-        NouvelairFlight entity = new NouvelairFlight("Nouvelair", 10.2, "class", "TUN", "FRA", new Date(), new Date());
+        NouvelairFlight entity = new NouvelairFlight("Nouvelair", 10.2, 1.2, 2.3, "TUN", "FRA", new Date(), new Date(), 5);
 
         NouvelairResponse response = mapper.entityToResponseMapper(entity);
-        assertEquals(response.getAirline(), entity.getAirline());
-        assertEquals(response.getCabinclass(), entity.getCabinclass());
-        assertEquals(response.getDepartureAirportCode(), entity.getDepartureAirportCode());
-        assertEquals(response.getDestinationAirportCode(), entity.getDestinationAirportCode());
+        assertEquals(response.getCarrier(), entity.getCarrier());
+        assertEquals(response.getBasePrice(), entity.getBasePrice());
+        assertEquals(response.getTax(), entity.getTax());
+        assertEquals(response.getDiscount(), entity.getDiscount());
+        assertEquals(response.getDepartureAirportName(), entity.getDepartureAirportName());
+        assertEquals(response.getDestinationAirportName(), entity.getDestinationAirportName());
     }
 }

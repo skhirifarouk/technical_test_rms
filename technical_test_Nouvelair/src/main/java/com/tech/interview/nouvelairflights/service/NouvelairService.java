@@ -27,14 +27,16 @@ public class NouvelairService {
 
     public List<NouvelairFlight> findByRequest(NouvelairRequest request) {
         Specification<NouvelairFlight> specification =
-                Specification.where(StringUtils.isEmpty(request.getOrigin()) ? null :
-                        NouvelairSpecification.originContains(request.getOrigin()))
-                        .and(StringUtils.isEmpty(request.getDestination()) ? null :
-                                NouvelairSpecification.destinationContains(request.getDestination()))
-                        .and(StringUtils.isEmpty(request.getDepartureDate()) ? null :
-                                NouvelairSpecification.departureDateFrom(request.getDepartureDate()))
-                        .and(StringUtils.isEmpty(request.getReturnDate()) ? null :
-                                NouvelairSpecification.returnDateTo(request.getReturnDate()));
+                Specification.where(StringUtils.isEmpty(request.getFrom()) ? null :
+                        NouvelairSpecification.departureContains(request.getFrom()))
+                        .and(StringUtils.isEmpty(request.getTo()) ? null :
+                                NouvelairSpecification.destinationContains(request.getTo()))
+                        .and(StringUtils.isEmpty(request.getOutboundDate()) ? null :
+                                NouvelairSpecification.outboundDateFrom(request.getOutboundDate()))
+                        .and(StringUtils.isEmpty(request.getInboundDate()) ? null :
+                                NouvelairSpecification.inboundDateTo(request.getInboundDate()))
+                        .and(request.getNumberOfAdults() == 0 ? null :
+                                NouvelairSpecification.numberOfAdultsLessOfEqual(request.getNumberOfAdults()));
         return NouvelairRepository.findAll(specification);
     }
 

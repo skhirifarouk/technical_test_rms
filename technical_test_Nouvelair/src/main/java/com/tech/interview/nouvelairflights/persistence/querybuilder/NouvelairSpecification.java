@@ -18,8 +18,8 @@ public class NouvelairSpecification {
      * @param expression
      * @return
      */
-    public static Specification<NouvelairFlight> originContains(String expression) {
-        return (root, query, builder) -> builder.like(root.get("departureAirportCode"), expression);
+    public static Specification<NouvelairFlight> departureContains(String expression) {
+        return (root, query, builder) -> builder.like(root.get("departureAirportName"), expression);
     }
 
     /**
@@ -28,7 +28,7 @@ public class NouvelairSpecification {
      * @return
      */
     public static Specification<NouvelairFlight> destinationContains(String expression) {
-        return (root, query, builder) -> builder.like(root.get("destinationAirportCode"), expression);
+        return (root, query, builder) -> builder.like(root.get("destinationAirportName"), expression);
     }
 
     /**
@@ -36,8 +36,8 @@ public class NouvelairSpecification {
      * @param expression
      * @return
      */
-    public static Specification<NouvelairFlight> departureDateFrom(String expression) {
-        return (root, query, builder) -> builder.greaterThanOrEqualTo(root.get("departureDate"), Date.from(LocalDate.parse(expression, DateTimeFormatter.ISO_LOCAL_DATE).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+    public static Specification<NouvelairFlight> outboundDateFrom(String expression) {
+        return (root, query, builder) -> builder.greaterThanOrEqualTo(root.get("outboundDateTime"), Date.from(LocalDate.parse(expression, DateTimeFormatter.ISO_LOCAL_DATE).atStartOfDay(ZoneId.systemDefault()).toInstant()));
     }
 
     /**
@@ -45,8 +45,8 @@ public class NouvelairSpecification {
      * @param expression
      * @return
      */
-    public static Specification<NouvelairFlight> returnDateTo(String expression) {
-        return (root, query, builder) -> builder.lessThanOrEqualTo(root.get("arrivalDate"), Date.from(LocalDate.parse(expression, DateTimeFormatter.ISO_LOCAL_DATE).plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+    public static Specification<NouvelairFlight> inboundDateTo(String expression) {
+        return (root, query, builder) -> builder.lessThanOrEqualTo(root.get("inboundDateTime"), Date.from(LocalDate.parse(expression, DateTimeFormatter.ISO_LOCAL_DATE).plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant()));
     }
 
     /**
@@ -54,7 +54,7 @@ public class NouvelairSpecification {
      * @param expression
      * @return
      */
-    public static Specification<NouvelairFlight> passengerCountContains(int expression) {
-        return (root, query, builder) -> builder.equal(root.get("passengerCount"), expression);
+    public static Specification<NouvelairFlight> numberOfAdultsLessOfEqual(int expression) {
+        return (root, query, builder) -> builder.lessThanOrEqualTo(root.get("numberOfAdults"), expression);
     }
 }

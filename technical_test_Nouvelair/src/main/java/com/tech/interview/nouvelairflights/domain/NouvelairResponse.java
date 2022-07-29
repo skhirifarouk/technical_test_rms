@@ -12,96 +12,108 @@ public class NouvelairResponse {
     /**
      * Airline company
      */
-    private String airline;
+    private String carrier;
 
     /**
-     * Price
+     * Base price
      */
-    private double price;
+    private double basePrice;
 
     /**
-     * Cabin class
+     * Tax
      */
-    private String cabinclass;
+    private double tax;
 
     /**
-     * Departure airport code : ISO country code
+     * Discount
+     */
+    private double discount;
+
+    /**
+     * Departure airport name : ISO country code
      */
     @ValidCountryCode
-    private String departureAirportCode;
+    private String departureAirportName;
 
     /**
-     * Destination airport code : ISO country code
+     * Destination airport name : ISO country code
      */
     @ValidCountryCode
-    private String destinationAirportCode;
+    private String destinationAirportName;
 
     /**
      * Departure date : ISO_LOCAL_DATE_TIME format
      */
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE_TIME)
-    private String departureDate;
+    private String outboundDateTime;
 
     /**
      * Arrival date : ISO_LOCAL_DATE_TIME format
      */
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE_TIME)
-    private String arrivalDate;
+    private String inboundDateTime;
 
-    public String getAirline() {
-        return airline;
+    public String getCarrier() {
+        return carrier;
     }
 
-    public void setAirline(final String airline) {
-        this.airline = airline;
+    public void setCarrier(final String carrier) {
+        this.carrier = carrier;
     }
 
-    public double getPrice() {
-        return price;
+    public double getBasePrice() {
+        return basePrice;
     }
 
-    public void setPrice(final double price) {
-        this.price = price;
+    public void setBasePrice(final double basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public String getCabinclass() {
-        return cabinclass;
+    public String getDepartureAirportName() {
+        return departureAirportName;
     }
 
-    public void setCabinclass(final String cabinclass) {
-        this.cabinclass = cabinclass;
+    public void setDepartureAirportName(final String departureAirportName) {
+        this.departureAirportName = departureAirportName;
     }
 
-    public String getDepartureAirportCode() {
-        return departureAirportCode;
+    public String getDestinationAirportName() {
+        return destinationAirportName;
     }
 
-    public void setDepartureAirportCode(final String departureAirportCode) {
-        this.departureAirportCode = departureAirportCode;
+    public void setDestinationAirportName(final String destinationAirportName) {
+        this.destinationAirportName = destinationAirportName;
     }
 
-    public String getDestinationAirportCode() {
-        return destinationAirportCode;
+    public String getOutboundDateTime() {
+        return outboundDateTime;
     }
 
-    public void setDestinationAirportCode(final String destinationAirportCode) {
-        this.destinationAirportCode = destinationAirportCode;
+    public void setOutboundDateTime(final String outboundDateTime) {
+        this.outboundDateTime = outboundDateTime;
     }
 
-    public String getDepartureDate() {
-        return departureDate;
+    public String getInboundDateTime() {
+        return inboundDateTime;
     }
 
-    public void setDepartureDate(final String departureDate) {
-        this.departureDate = departureDate;
+    public void setInboundDateTime(final String inboundDateTime) {
+        this.inboundDateTime = inboundDateTime;
     }
 
-    public String getArrivalDate() {
-        return arrivalDate;
+    public double getTax() {
+        return tax;
     }
 
-    public void setArrivalDate(final String arrivalDate) {
-        this.arrivalDate = arrivalDate;
+    public void setTax(double tax) {
+        this.tax = tax;
     }
 
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 }

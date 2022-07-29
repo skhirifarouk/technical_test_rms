@@ -18,7 +18,7 @@ public class ResponseMapperTest {
 
     @Test
     public void givenEntiyToResponse_whenMaps_thenCorrect() {
-        TunisairFlight entity = new TunisairFlight("tunisair", 10.2, "class", "TUN", "FRA", new Date(), new Date());
+        TunisairFlight entity = new TunisairFlight("tunisair", 10.2, "class", "TUN", "FRA", new Date(), new Date(), 6);
 
         TunisairResponse response = mapper.entityToResponseMapper(entity);
         assertEquals(response.getAirline(), entity.getAirline());

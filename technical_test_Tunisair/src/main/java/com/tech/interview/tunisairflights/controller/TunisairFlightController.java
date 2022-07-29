@@ -6,6 +6,8 @@ import com.tech.interview.tunisairflights.model.TunisairFlight;
 import com.tech.interview.tunisairflights.service.TunisairService;
 import com.tech.interview.tunisairflights.util.mapper.service.mapper.EntityResponseMapperHelper.TunisAirModelResponseMapperHelperHolder;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +19,10 @@ import java.util.List;
 /**
  * Controller
  */
-@Api(value = "/flight", description = "Nouvelair Flight API")
+@Api(value = "/flight", description = "Tunisair Flight API")
 @RestController
 @RequestMapping("/flight")
-public class TunisAirFlightController {
+public class TunisairFlightController {
 
     /**
      * Service bean
@@ -47,6 +49,17 @@ public class TunisAirFlightController {
      * @return
      */
     @GetMapping("/by_request")
+    @ApiOperation(value = "Finds flights by request",
+            response = TunisairResponse.class,
+            responseContainer = "List")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "departureDate", value = "Departure date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "returnDate", value = "Arrival date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "origin", value = "Origin country : ISO country code", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "destination", value = "Destination country : ISO country code", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "passengerCount", value = "Passenger count", required = false, dataType = "long", paramType = "query")
+
+    })
     public ResponseEntity<List<TunisairResponse>> getByParams(@Valid TunisAirRequest request) {
         return ResponseEntity.ok(TunisAirModelResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(tunisairService.findByRequest(request)));
     }

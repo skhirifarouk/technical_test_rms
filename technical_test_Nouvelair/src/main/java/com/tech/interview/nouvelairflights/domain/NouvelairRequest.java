@@ -13,79 +13,80 @@ public class NouvelairRequest {
      * Origin : ISO country code
      */
     @ValidCountryCode
-    private String origin;
+    private String from;
 
     /**
      * Destination: ISO contry code
      */
     @ValidCountryCode
-    private String destination;
+    private String to;
 
     /**
-     * Departure date : ISO_LOCAL_DATE format
+     * Outbound date : ISO_LOCAL_DATE format
      */
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE)
-    private String departureDate;
+    private String outboundDate;
 
     /**
-     * Arrival date : ISO_LOCAL_DATE format
+     * Inbound date : ISO_LOCAL_DATE format
      */
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE)
-    private String returnDate;
+    private String inboundDate;
 
     /**
-     * Passenger count
+     * Number of adults
      */
-    private int passengerCount;
+    private int numberOfAdults;
 
-    public NouvelairRequest(String origin, String destination, String departureDate, String returnDate) {
-        this.origin = origin;
-        this.destination = destination;
-        this.departureDate = departureDate;
-        this.returnDate = returnDate;
+    public NouvelairRequest(String from, String to, String outboundDate, String inboundDate, int numberOfAdults) {
+        this.from = from;
+        this.to = to;
+        this.outboundDate = outboundDate;
+        this.inboundDate = inboundDate;
+        this.numberOfAdults = numberOfAdults;
     }
 
     public NouvelairRequest(){
 
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getFrom() {
+        return from;
     }
 
-    public void setOrigin(final String origin) {
-        this.origin = origin;
+    public void setFrom(final String from) {
+        this.from = from;
     }
 
-    public String getDestination() {
-        return destination;
+    public String getTo() {
+        return to;
     }
 
-    public void setDestination(final String destination) {
-        this.destination = destination;
+    public void setTo(final String to) {
+        this.to = to;
     }
 
-    public String getDepartureDate() {
-        return departureDate;
+    public String getOutboundDate() {
+        return outboundDate;
     }
 
-    public void setDepartureDate(final String departureDate) {
-        this.departureDate = departureDate;
+    public void setOutboundDate(final String outboundDate) {
+        this.outboundDate = outboundDate;
     }
 
-    public String getReturnDate() {
-        return returnDate;
+    public String getInboundDate() {
+        return inboundDate;
     }
 
-    public void setReturnDate(final String returnDate) {
-        this.returnDate = returnDate;
+    public void setInboundDate(final String inboundDate) {
+        this.inboundDate = inboundDate;
     }
 
-    public int getPassengerCount() {
-        return passengerCount;
+    public int getNumberOfAdults() {
+        return numberOfAdults;
     }
 
-    public void setPassengerCount(final int passengerCount) {
-        this.passengerCount = passengerCount;
+    public void setNumberOfAdults(final int numberOfAdults) {
+        this.numberOfAdults = numberOfAdults;
     }
 }

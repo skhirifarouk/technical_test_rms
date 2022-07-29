@@ -4,6 +4,8 @@ import com.tech.interview.tunisairflights.enums.DateFormat;
 import com.tech.interview.tunisairflights.util.validator.country.ValidCountryCode;
 import com.tech.interview.tunisairflights.util.validator.date.ValidDateFormat;
 
+import javax.validation.constraints.Pattern;
+
 /**
  * Response
  */
@@ -22,6 +24,7 @@ public class TunisairResponse {
     /**
      * Cabin class
      */
+    @Pattern(regexp = "E|B", flags = Pattern.Flag.CASE_INSENSITIVE)
     private String cabinclass;
 
     /**
