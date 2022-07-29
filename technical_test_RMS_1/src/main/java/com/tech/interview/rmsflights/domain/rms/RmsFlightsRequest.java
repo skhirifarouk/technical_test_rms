@@ -1,11 +1,41 @@
 package com.tech.interview.rmsflights.domain.rms;
 
+import com.tech.interview.rmsflights.enums.DateFormat;
+import com.tech.interview.rmsflights.util.validator.country.ValidCountryCode;
+import com.tech.interview.rmsflights.util.validator.date.ValidDateFormat;
+
+import javax.validation.constraints.Max;
+
 public class RmsFlightsRequest {
 
+    /**
+     * Origin : ISO country code
+     */
+    @ValidCountryCode
     private String origin;
+
+    /**
+     * Destination: ISO contry code
+     */
+    @ValidCountryCode
     private String destination;
+
+    /**
+     * Departure date : ISO_LOCAL_DATE format
+     */
+    @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE)
     private String departureDate;
+
+    /**
+     * Arrival date : ISO_LOCAL_DATE format
+     */
+    @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE)
     private String returnDate;
+
+    /**
+     * Passenger count : Maximum value 4
+     */
+    @Max(value = 4, message = "Maximum passenger count = 4")
     private int numberOfPassengers;
 
     public String getOrigin() {

@@ -1,4 +1,4 @@
-import com.tech.interview.tunisairflights.domain.tunisair.TunisAirRequest;
+import com.tech.interview.tunisairflights.domain.TunisAirRequest;
 import com.tech.interview.tunisairflights.util.validator.country.ValidCountryCodeValidator;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;

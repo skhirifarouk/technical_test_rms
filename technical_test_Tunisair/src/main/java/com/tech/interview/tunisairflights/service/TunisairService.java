@@ -1,6 +1,6 @@
 package com.tech.interview.tunisairflights.service;
 
-import com.tech.interview.tunisairflights.domain.tunisair.TunisAirRequest;
+import com.tech.interview.tunisairflights.domain.TunisAirRequest;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
 import com.tech.interview.tunisairflights.persistence.TunisairRepository;
 import com.tech.interview.tunisairflights.persistence.querybuilder.TunisairSpecification;

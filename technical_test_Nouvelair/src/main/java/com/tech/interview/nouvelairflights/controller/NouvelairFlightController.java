@@ -1,6 +1,6 @@
 package com.tech.interview.nouvelairflights.controller;
 
-import com.tech.interview.nouvelairflights.util.mapper.service.mapper.EntityResponseMapperHelper.NouvelairModelResponseMapperHelperHolder;
+import com.tech.interview.nouvelairflights.util.mapper.EntityResponseMapperHelper.NouvelairModelResponseMapperHelperHolder;
 import com.tech.interview.nouvelairflights.domain.NouvelairRequest;
 import com.tech.interview.nouvelairflights.domain.NouvelairResponse;
 import com.tech.interview.nouvelairflights.model.NouvelairFlight;

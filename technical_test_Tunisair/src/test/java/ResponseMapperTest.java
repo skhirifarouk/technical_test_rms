@@ -1,6 +1,6 @@
-import com.tech.interview.tunisairflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.tunisairflights.domain.TunisairResponse;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
-import com.tech.interview.tunisairflights.util.mapper.service.mapper.EntityResponseMapper;
+import com.tech.interview.tunisairflights.util.mapper.EntityResponseMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 

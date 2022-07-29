@@ -1,6 +1,6 @@
-package com.tech.interview.tunisairflights.util.mapper.service.mapper;
+package com.tech.interview.tunisairflights.util.mapper;
 
-import com.tech.interview.tunisairflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.tunisairflights.domain.TunisairResponse;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
 import org.mapstruct.factory.Mappers;
 
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  */
 public class EntityResponseMapperHelper {
 
-    EntityResponseMapper mapper = Mappers.getMapper(EntityResponseMapper.class);
+    private final EntityResponseMapper mapper = Mappers.getMapper(EntityResponseMapper.class);
 
     /**
      * Map from entity to response
@@ -20,7 +20,7 @@ public class EntityResponseMapperHelper {
      * @return
      */
     public List<TunisairResponse> modelToResponseListMapper(List<TunisairFlight> tunisAirFlightList) {
-        return tunisAirFlightList.stream().map(x -> modelToResponseMapper(x)).collect(Collectors.toList());
+        return tunisAirFlightList.stream().map(this::modelToResponseMapper).collect(Collectors.toList());
     }
 
     /**

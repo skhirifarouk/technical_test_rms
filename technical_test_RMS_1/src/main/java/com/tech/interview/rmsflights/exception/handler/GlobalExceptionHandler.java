@@ -1,13 +1,16 @@
-package com.tech.interview.rmsflights.exception;
+package com.tech.interview.rmsflights.exception.handler;
 
 
+import com.tech.interview.rmsflights.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import java.lang.reflect.UndeclaredThrowableException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.stream.Collectors;
@@ -17,7 +20,6 @@ import java.util.stream.Collectors;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
 
     /**
      * Handler URL not found : 404
@@ -42,6 +44,18 @@ public class GlobalExceptionHandler {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 
+    }
+
+    /**
+     * Validation exception handler : 400
+     * @param ex
+     * @param request
+     * @return
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> methodArgumentNotValidExcpetionHandler(MethodArgumentNotValidException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     /**

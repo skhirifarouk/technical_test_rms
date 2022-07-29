@@ -1,10 +1,10 @@
 package com.tech.interview.tunisairflights.controller;
 
-import com.tech.interview.tunisairflights.domain.tunisair.TunisAirRequest;
-import com.tech.interview.tunisairflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.tunisairflights.domain.TunisAirRequest;
+import com.tech.interview.tunisairflights.domain.TunisairResponse;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
 import com.tech.interview.tunisairflights.service.TunisairService;
-import com.tech.interview.tunisairflights.util.mapper.service.mapper.EntityResponseMapperHelper.TunisAirModelResponseMapperHelperHolder;
+import com.tech.interview.tunisairflights.util.mapper.EntityResponseMapperHelper.TunisAirModelResponseMapperHelperHolder;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

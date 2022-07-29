@@ -23,7 +23,6 @@ public class ErrorDetails {
     private String details;
 
     public ErrorDetails(Date timestamp, List<String> message, String details) {
-        super();
         this.timestamp = timestamp;
         this.messages = message;
         this.details = details;

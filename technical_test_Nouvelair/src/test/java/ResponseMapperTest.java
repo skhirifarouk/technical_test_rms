@@ -1,6 +1,6 @@
 import com.tech.interview.nouvelairflights.domain.NouvelairResponse;
 import com.tech.interview.nouvelairflights.model.NouvelairFlight;
-import com.tech.interview.nouvelairflights.util.mapper.service.mapper.EntityResponseMapper;
+import com.tech.interview.nouvelairflights.util.mapper.EntityResponseMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 

@@ -1,7 +1,7 @@
 package com.tech.interview.rmsflights.proxy;
 
-import com.tech.interview.rmsflights.domain.tunisair.TunisAirRequest;
-import com.tech.interview.rmsflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.rmsflights.domain.nouvelair.NouvelairRequest;
+import com.tech.interview.rmsflights.domain.nouvelair.NouvelairResponse;
 import com.tech.interview.rmsflights.exception.ResourceNotFoundException;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -10,14 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "tunisair", url = "localhost:8081/tunisair/flight")
-public interface TunisairServiceProxy {
+@FeignClient(name = "nouvelair", url = "localhost:8082/nouvelair/flight")
+public interface NouvelairServiceProxy {
 
     /**
      * Get data by request
      * @return
      */
     @GetMapping("/by_request")
-    ResponseEntity<List<TunisairResponse>> getByRequest(@RequestParam TunisAirRequest request) throws ResourceNotFoundException;
-
+    ResponseEntity<List<NouvelairResponse>> getByRequest(@RequestParam NouvelairRequest request) throws ResourceNotFoundException;
 }

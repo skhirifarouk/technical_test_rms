@@ -23,13 +23,13 @@ public class ValidCountryCodeValidationTest {
     public void setUp() {
         validCountryCodeconstraintValidatorContext = mock(ConstraintValidatorContext.class);
         validCountryCodeValidator = new ValidCountryCodeValidator();
-        nouvelairRequest = new NouvelairRequest("AAA", "TUN", "27/07/2022", StringUtils.EMPTY);
+        nouvelairRequest = new NouvelairRequest("AAA", "TUN", "27/07/2022", StringUtils.EMPTY, 5);
 
     }
 
     @Test
     public void givenInvalidCountryCode_whenValidate_thenReturnInvalid() {
-        assertFalse(validCountryCodeValidator.isValid(nouvelairRequest.getOrigin(), validCountryCodeconstraintValidatorContext));
+        assertFalse(validCountryCodeValidator.isValid(nouvelairRequest.getFrom(), validCountryCodeconstraintValidatorContext));
     }
 
 }

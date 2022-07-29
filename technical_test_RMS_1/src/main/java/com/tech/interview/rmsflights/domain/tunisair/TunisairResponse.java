@@ -3,6 +3,9 @@ package com.tech.interview.rmsflights.domain.tunisair;
 import com.tech.interview.rmsflights.enums.DateFormat;
 import com.tech.interview.rmsflights.util.validator.country.ValidCountryCode;
 import com.tech.interview.rmsflights.util.validator.date.ValidDateFormat;
+
+import javax.validation.constraints.Pattern;
+
 /**
  * Response
  */
@@ -21,6 +24,7 @@ public class TunisairResponse {
     /**
      * Cabin class
      */
+    @Pattern(regexp = "E|B", flags = Pattern.Flag.CASE_INSENSITIVE, message = "Invalid cabin class")
     private String cabinclass;
 
     /**

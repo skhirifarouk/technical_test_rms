@@ -1,4 +1,4 @@
-package com.tech.interview.tunisairflights.domain.tunisair;
+package com.tech.interview.tunisairflights.domain;
 
 import com.tech.interview.tunisairflights.enums.DateFormat;
 import com.tech.interview.tunisairflights.util.validator.country.ValidCountryCode;

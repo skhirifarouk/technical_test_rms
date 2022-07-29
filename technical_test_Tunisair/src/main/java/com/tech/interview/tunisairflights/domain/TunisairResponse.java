@@ -1,4 +1,4 @@
-package com.tech.interview.tunisairflights.domain.tunisair;
+package com.tech.interview.tunisairflights.domain;
 
 import com.tech.interview.tunisairflights.enums.DateFormat;
 import com.tech.interview.tunisairflights.util.validator.country.ValidCountryCode;
@@ -24,7 +24,7 @@ public class TunisairResponse {
     /**
      * Cabin class
      */
-    @Pattern(regexp = "E|B", flags = Pattern.Flag.CASE_INSENSITIVE)
+    @Pattern(regexp = "E|B", flags = Pattern.Flag.CASE_INSENSITIVE, message = "Invalid cabin class")
     private String cabinclass;
 
     /**

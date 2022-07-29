@@ -42,7 +42,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> bindExcpetionHandler(BindException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
-
     }
 
     /**
@@ -55,7 +54,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> methodArgumentNotValidExcpetionHandler(MethodArgumentNotValidException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getBindingResult().getAllErrors().stream().map(x-> x.getDefaultMessage()).collect(Collectors.toList()), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
-
     }
 
     /**
@@ -68,6 +66,5 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> globalExcpetionHandler(Exception ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), Arrays.asList(ex.getMessage()), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-
     }
 }

@@ -1,6 +1,6 @@
-package com.tech.interview.tunisairflights.util.mapper.service.mapper;
+package com.tech.interview.tunisairflights.util.mapper;
 
-import com.tech.interview.tunisairflights.domain.tunisair.TunisairResponse;
+import com.tech.interview.tunisairflights.domain.TunisairResponse;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
