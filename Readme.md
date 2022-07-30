@@ -9,7 +9,7 @@ This applications contanis three microservices
   This API is connected to its database (nouvelair_database (docker port:3307 / dev port : 3306))
 
   
-- RMS flights API : An API collecting data from both APIs (swagger url : http://localhost:8082/rms/swagger-ui.html#/rms-flight-controller).
+- RMS flights API : An API collecting data from both APIs (swagger url : http://localhost:8080/rms/swagger-ui.html#/rms-flight-controller).
 
 All APIs have two profiles
 
