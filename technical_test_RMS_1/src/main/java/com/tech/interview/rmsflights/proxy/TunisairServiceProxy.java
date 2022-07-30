@@ -18,6 +18,6 @@ public interface TunisairServiceProxy {
      * @return
      */
     @GetMapping("/by_request")
-    ResponseEntity<List<TunisairResponse>> getByRequest(@RequestParam TunisAirRequest request) throws ResourceNotFoundException;
+    ResponseEntity<List<TunisairResponse>> getByRequest(@RequestParam("request") TunisAirRequest request) throws ResourceNotFoundException;
 
 }

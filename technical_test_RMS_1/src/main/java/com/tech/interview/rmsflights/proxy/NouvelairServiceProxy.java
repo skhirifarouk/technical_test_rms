@@ -18,5 +18,5 @@ public interface NouvelairServiceProxy {
      * @return
      */
     @GetMapping("/by_request")
-    ResponseEntity<List<NouvelairResponse>> getByRequest(@RequestParam NouvelairRequest request) throws ResourceNotFoundException;
+    ResponseEntity<List<NouvelairResponse>> getByRequest(@RequestParam("request") NouvelairRequest request) throws ResourceNotFoundException;
 }
