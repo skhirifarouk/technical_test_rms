@@ -1,15 +1,15 @@
 # RMS Flights
 
 This applications contanis three microservices
-- Tunisair flights API : exposing services associated to Tunisair flights data (swagger url : http://localhost:8081/tunisair/swagger-ui.html#/tunisaire-flight-controller)
+- Tunisair flights API : exposing services associated to Tunisair flights data (swagger url : http://localhost:8081/tunisair/swagger-ui.html#/tunisair-flight-controller)
     This API is connected to its database (tunisair_database (docker / dev port:3306))
 
 
-- Nouvelair flights API : exposing services associated to Nouvelair flights data (swagger url : http://localhost:8081/tunisair/swagger-ui.html#/tunisaire-flight-controller)
+- Nouvelair flights API : exposing services associated to Nouvelair flights data (swagger url : http://localhost:8082/nouvelair/swagger-ui.html#/nouvelair-flight-controller)
   This API is connected to its database (nouvelair_database (docker port:3307 / dev port : 3306))
 
   
-- RMS flights API : An API collecting data from both APIs
+- RMS flights API : An API collecting data from both APIs (swagger url : http://localhost:8082/rms/swagger-ui.html#/rms-flight-controller).
 
 All APIs have two profiles
 
