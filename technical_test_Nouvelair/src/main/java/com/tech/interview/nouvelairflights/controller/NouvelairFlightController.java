@@ -50,11 +50,11 @@ public class NouvelairFlightController {
             response = NouvelairResponse.class,
             responseContainer = "List")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "outboundDate", value = "Outbound date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "inboundDate", value = "Inbound date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "from", value = "Origin country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "to", value = "Destination country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "numberOfAdults", value = "Adults count", required = false, dataType = "long", paramType = "query")
+            @ApiImplicitParam(name = "outboundDate", value = "Outbound date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-30-07", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "inboundDate", value = "Inbound date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-30-07", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "from", value = "Origin country : ISO country code", required = false, example = "TUN", dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "to", value = "Destination country : ISO country code", required = false, example = "FRA", dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "numberOfAdults", value = "Adults count", required = false, example = "5", dataType = "long", paramType = "query")
 
     })
     public ResponseEntity<List<NouvelairResponse>> getByParams(@Valid NouvelairRequest request) {

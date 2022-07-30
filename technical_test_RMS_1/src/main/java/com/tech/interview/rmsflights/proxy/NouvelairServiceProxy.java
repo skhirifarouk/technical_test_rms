@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "nouvelair", url = "localhost:8082/nouvelair/flight")
+/**
+ * Nouvelair feign client
+ */
+@FeignClient(name = "nouvelair", url = "${feign.client.config.apis.nouvelair}")
 public interface NouvelairServiceProxy {
 
     /**

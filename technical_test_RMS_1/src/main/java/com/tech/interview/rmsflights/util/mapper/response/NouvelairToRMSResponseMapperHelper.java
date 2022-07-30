@@ -13,6 +13,7 @@ public class NouvelairToRMSResponseMapperHelper {
 
     /**
      * Map object list
+     *
      * @param rmsResponseList
      * @return
      */
@@ -22,6 +23,7 @@ public class NouvelairToRMSResponseMapperHelper {
 
     /**
      * Map object
+     *
      * @param nouvelairResponse
      * @return
      */

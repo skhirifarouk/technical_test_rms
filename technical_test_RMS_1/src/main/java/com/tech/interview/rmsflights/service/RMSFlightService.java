@@ -30,6 +30,7 @@ public class RMSFlightService {
 
     /**
      * Contructor with parameters
+     *
      * @param tunisairServiceProxy
      * @param nouvelairServiceProxy
      */
@@ -40,23 +41,25 @@ public class RMSFlightService {
 
     /**
      * Get Tunisair flight results
+     *
      * @param request
      * @return
      * @throws ResourceNotFoundException
      */
-    public List<RmsFlightsResponse> getResponseFromTunisair (RmsFlightsRequest request) throws ResourceNotFoundException {
+    public List<RmsFlightsResponse> getResponseFromTunisair(RmsFlightsRequest request) throws ResourceNotFoundException {
         List<TunisairResponse> tunisairResponseList = tunisairServiceProxy.getByRequest(RMSToTunisairRequestMapperHelperHolder.INSTANCE.map(request)).getBody();
-            return TunisairToRMSResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(tunisairResponseList);
+        return TunisairToRMSResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(tunisairResponseList);
     }
 
     /**
      * Get Nouvelair flight results
+     *
      * @param request
      * @return
      * @throws ResourceNotFoundException
      */
     public List<RmsFlightsResponse> getResponseFromNouvelair(RmsFlightsRequest request) throws ResourceNotFoundException {
         List<NouvelairResponse> nouvelairResponseList = nouvelairServiceProxy.getByRequest(RMSToNouvelairRequestMapperHelperHolder.INSTANCE.map(request)).getBody();
-           return NouvelairToRMSResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(nouvelairResponseList);
+        return NouvelairToRMSResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(nouvelairResponseList);
     }
 }

@@ -28,7 +28,7 @@ import java.util.concurrent.CompletionException;
 import java.util.stream.Collectors;
 
 /**
- * Controller
+ * Controller : RMS flight endpoint
  */
 @Api(value = "/flights", description = "RMS Flight API")
 @RestController
@@ -40,6 +40,7 @@ public class RMSFlightController {
 
     /**
      * Get data by request
+     * Empty parameters will not be taken into account
      *
      * @return
      */
@@ -48,11 +49,11 @@ public class RMSFlightController {
             response = RmsFlightsResponse.class,
             responseContainer = "List")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "departureDate", value = "Departure date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "returnDate", value = "Arrival date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "origin", value = "Origin country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "destination", value = "Destination country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "numberOfPassengers", value = "number of passengers", required = false, dataType = "long", paramType = "query")
+            @ApiImplicitParam(name = "departureDate", value = "Departure date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-01-01", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "returnDate", value = "Arrival date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-01-01", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "origin", value = "Origin country : ISO country code", required = false, example = "FRA", dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "destination", value = "Destination country : ISO country code", example = "TUN", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "numberOfPassengers", value = "number of passengers", example = "1", required = false, dataType = "long", paramType = "query")
 
     })
     public ResponseEntity<List<RmsFlightsResponse>> getByRequest(@Valid RmsFlightsRequest rmsFlightsRequest) throws Throwable, FeignException {

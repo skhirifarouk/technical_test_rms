@@ -12,6 +12,7 @@ public class TunisairToRMSResponseMapperHelper {
 
     /**
      * Map object list
+     *
      * @param rmsResponseList
      * @return
      */
@@ -21,6 +22,7 @@ public class TunisairToRMSResponseMapperHelper {
 
     /**
      * Map object
+     *
      * @param TunisairResponse
      * @return
      */

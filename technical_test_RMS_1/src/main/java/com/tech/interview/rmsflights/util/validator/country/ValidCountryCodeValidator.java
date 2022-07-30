@@ -8,7 +8,6 @@ import java.util.*;
 
 /**
  * Validator to validate the ISO Country code.
- *
  */
 public class ValidCountryCodeValidator implements ConstraintValidator<ValidCountryCode, String> {
 

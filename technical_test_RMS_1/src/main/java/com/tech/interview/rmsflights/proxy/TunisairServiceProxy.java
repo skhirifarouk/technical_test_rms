@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "tunisair", url = "localhost:8081/tunisair/flight")
+/**
+ * Tunisair feign client
+ */
+@FeignClient(name = "tunisair", url = "${feign.client.config.apis.tunisair}")
 public interface TunisairServiceProxy {
 
     /**

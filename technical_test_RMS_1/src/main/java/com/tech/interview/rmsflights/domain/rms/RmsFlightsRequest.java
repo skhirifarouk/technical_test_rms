@@ -38,6 +38,30 @@ public class RmsFlightsRequest {
     @Max(value = 4, message = "Maximum passenger count = 4")
     private int numberOfPassengers;
 
+
+    /**
+     * No args constrcutor
+     */
+    public RmsFlightsRequest() {
+    }
+
+    /**
+     * All args constrcutor
+     *
+     * @param origin
+     * @param destination
+     * @param departureDate
+     * @param returnDate
+     * @param numberOfPassengers
+     */
+    public RmsFlightsRequest(String origin, String destination, String departureDate, String returnDate, int numberOfPassengers) {
+        this.origin = origin;
+        this.destination = destination;
+        this.departureDate = departureDate;
+        this.returnDate = returnDate;
+        this.numberOfPassengers = numberOfPassengers;
+    }
+
     public String getOrigin() {
         return origin;
     }

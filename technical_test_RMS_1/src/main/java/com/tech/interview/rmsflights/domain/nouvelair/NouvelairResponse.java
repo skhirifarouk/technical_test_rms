@@ -53,6 +53,34 @@ public class NouvelairResponse {
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE_TIME)
     private String inboundDateTime;
 
+    /**
+     * No args constructor
+     */
+    public NouvelairResponse() {
+    }
+
+    /**
+     * All args constructor
+     * @param carrier
+     * @param basePrice
+     * @param tax
+     * @param discount
+     * @param departureAirportName
+     * @param destinationAirportName
+     * @param outboundDateTime
+     * @param inboundDateTime
+     */
+    public NouvelairResponse(String carrier, double basePrice, double tax, double discount, String departureAirportName, String destinationAirportName, String outboundDateTime, String inboundDateTime) {
+        this.carrier = carrier;
+        this.basePrice = basePrice;
+        this.tax = tax;
+        this.discount = discount;
+        this.departureAirportName = departureAirportName;
+        this.destinationAirportName = destinationAirportName;
+        this.outboundDateTime = outboundDateTime;
+        this.inboundDateTime = inboundDateTime;
+    }
+
     public String getCarrier() {
         return carrier;
     }

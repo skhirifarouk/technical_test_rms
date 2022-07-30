@@ -12,7 +12,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Annotation to validate the ISO Country code.
- *
  */
 @Target({FIELD, PARAMETER})
 @Retention(RUNTIME)

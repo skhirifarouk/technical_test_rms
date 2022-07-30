@@ -38,6 +38,15 @@ public class NouvelairRequest {
      */
     private int numberOfAdults;
 
+    /**
+     * All args constructor
+     *
+     * @param from
+     * @param to
+     * @param outboundDate
+     * @param inboundDate
+     * @param numberOfAdults
+     */
     public NouvelairRequest(String from, String to, String outboundDate, String inboundDate, int numberOfAdults) {
         this.from = from;
         this.to = to;
@@ -46,8 +55,10 @@ public class NouvelairRequest {
         this.numberOfAdults = numberOfAdults;
     }
 
-    public NouvelairRequest(){
-
+    /**
+     * No args constructor
+     */
+    public NouvelairRequest() {
     }
 
     public String getFrom() {
