@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Controller
+ * Controller : Nouvelair flight endpoints
  */
 @Api(value = "/flight", description = "Nouvelair Flight API")
 @RestController
@@ -29,6 +29,7 @@ public class NouvelairFlightController {
 
     /**
      * Get all data
+     *
      * @return
      */
     @GetMapping("/all")
@@ -42,6 +43,8 @@ public class NouvelairFlightController {
 
     /**
      * Get data by request
+     * Empty parameters will not be taken into account
+     *
      * @param request
      * @return
      */
@@ -64,6 +67,7 @@ public class NouvelairFlightController {
 
     /**
      * Save new entry
+     *
      * @param nouvelairFlight
      * @return
      */

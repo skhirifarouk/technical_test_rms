@@ -1,4 +1,5 @@
 package com.tech.interview.nouvelairflights.model;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tech.interview.nouvelairflights.util.validator.country.ValidCountryCode;
 

@@ -15,6 +15,7 @@ public class NouvelairSpecification {
 
     /**
      * Origin countains text
+     *
      * @param expression
      * @return
      */
@@ -24,6 +25,7 @@ public class NouvelairSpecification {
 
     /**
      * Destination contains text
+     *
      * @param expression
      * @return
      */
@@ -33,6 +35,7 @@ public class NouvelairSpecification {
 
     /**
      * Departure date from
+     *
      * @param expression
      * @return
      */
@@ -42,6 +45,7 @@ public class NouvelairSpecification {
 
     /**
      * Arrival date to
+     *
      * @param expression
      * @return
      */
@@ -51,6 +55,7 @@ public class NouvelairSpecification {
 
     /**
      * Passenger count equals
+     *
      * @param expression
      * @return
      */

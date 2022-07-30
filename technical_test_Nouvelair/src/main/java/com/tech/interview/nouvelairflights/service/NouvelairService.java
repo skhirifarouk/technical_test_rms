@@ -26,17 +26,26 @@ public class NouvelairService {
     }
 
     public List<NouvelairFlight> findByRequest(NouvelairRequest request) {
+
+        // Qeury filter specification
         Specification<NouvelairFlight> specification =
+                // Departure country contains
                 Specification.where(StringUtils.isEmpty(request.getFrom()) ? null :
-                        NouvelairSpecification.departureContains(request.getFrom()))
+                                NouvelairSpecification.departureContains(request.getFrom()))
+                        // Arrival country contains
                         .and(StringUtils.isEmpty(request.getTo()) ? null :
                                 NouvelairSpecification.destinationContains(request.getTo()))
+                        // Outbound date
                         .and(StringUtils.isEmpty(request.getOutboundDate()) ? null :
                                 NouvelairSpecification.outboundDateFrom(request.getOutboundDate()))
+                        // Inbound date
                         .and(StringUtils.isEmpty(request.getInboundDate()) ? null :
                                 NouvelairSpecification.inboundDateTo(request.getInboundDate()))
+                        // Number of adults
                         .and(request.getNumberOfAdults() == 0 ? null :
                                 NouvelairSpecification.numberOfAdultsLessOfEqual(request.getNumberOfAdults()));
+
+        // Find data
         return NouvelairRepository.findAll(specification);
     }
 
