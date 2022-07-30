@@ -14,18 +14,18 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Annotation to validate the date format.
- *
  */
 @Target({FIELD, PARAMETER})
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidDateFormatValidator.class)
 @Documented
 public @interface ValidDateFormat {
-    String message() default "invalid date format";
+    String message() default "Invalid date format";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
     // Required date format
     DateFormat requireddateformat();
 }

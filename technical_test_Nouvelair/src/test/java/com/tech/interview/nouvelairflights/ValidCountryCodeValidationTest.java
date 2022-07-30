@@ -1,5 +1,7 @@
-import com.tech.interview.rmsflights.domain.nouvelair.NouvelairRequest;
-import com.tech.interview.rmsflights.util.validator.country.ValidCountryCodeValidator;
+package com.tech.interview.nouvelairflights;
+
+import com.tech.interview.nouvelairflights.util.validator.country.ValidCountryCodeValidator;
+import com.tech.interview.nouvelairflights.domain.NouvelairRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

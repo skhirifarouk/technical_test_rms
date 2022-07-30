@@ -12,13 +12,12 @@ import java.time.format.DateTimeParseException;
 
 /**
  * Validator to validate the date format.
- *
  */
 public class ValidDateFormatValidator implements ConstraintValidator<ValidDateFormat, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
-        DateFormat  dateFormat = (DateFormat) ((ConstraintDescriptorImpl) ((ConstraintValidatorContextImpl) constraintValidatorContext).getConstraintDescriptor()).getAnnotationDescriptor().getAttribute("requireddateformat");
+        DateFormat dateFormat = (DateFormat) ((ConstraintDescriptorImpl) ((ConstraintValidatorContextImpl) constraintValidatorContext).getConstraintDescriptor()).getAnnotationDescriptor().getAttribute("requireddateformat");
         if (StringUtils.isNotEmpty(value)) {
             try {
                 LocalDate.parse(value, DateFormat.ISO_LOCAL_DATE.getDateTimeFormatter());

@@ -1,3 +1,5 @@
+package com.tech.interview.tunisairflights;
+
 import com.tech.interview.tunisairflights.domain.TunisairResponse;
 import com.tech.interview.tunisairflights.model.TunisairFlight;
 import com.tech.interview.tunisairflights.util.mapper.EntityResponseMapper;

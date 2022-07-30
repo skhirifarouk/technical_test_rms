@@ -66,9 +66,24 @@ public class TunisairFlight {
      */
     private int passengerCount;
 
+    /**
+     * No args constructor
+     */
     public TunisairFlight() {
     }
 
+    /**
+     * All args constructor
+     *
+     * @param airline
+     * @param price
+     * @param cabinclass
+     * @param departureAirportCode
+     * @param destinationAirportCode
+     * @param departureDate
+     * @param arrivalDate
+     * @param passengerCount
+     */
     public TunisairFlight(String airline, double price, String cabinclass, String departureAirportCode, String destinationAirportCode, Date departureDate, Date arrivalDate, int passengerCount) {
         this.airline = airline;
         this.price = price;

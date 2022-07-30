@@ -12,14 +12,13 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Annotation to validate the ISO Country code.
- *
  */
 @Target({FIELD, PARAMETER})
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidCountryCodeValidator.class)
 @Documented
 public @interface ValidCountryCode {
-    String message() default "wrong iso code";
+    String message() default "Wrong ISO code";
 
     Class<?>[] groups() default {};
 

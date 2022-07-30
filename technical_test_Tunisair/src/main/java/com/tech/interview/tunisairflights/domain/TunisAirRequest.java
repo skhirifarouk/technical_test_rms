@@ -45,7 +45,7 @@ public class TunisAirRequest {
         this.returnDate = returnDate;
     }
 
-    public TunisAirRequest(){
+    public TunisAirRequest() {
 
     }
 

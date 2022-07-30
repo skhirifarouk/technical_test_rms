@@ -17,9 +17,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Controller
+ * Controller : Tunisair flight endpoints
  */
-@Api(value = "/flight", description = "Tunisair Flight API")
+@Api(value = "/flight", description = "Tunisair flight API")
 @RestController
 @RequestMapping("/flight")
 public class TunisairFlightController {
@@ -32,6 +32,7 @@ public class TunisairFlightController {
 
     /**
      * Get all data
+     *
      * @return
      */
     @GetMapping("/all")
@@ -44,7 +45,9 @@ public class TunisairFlightController {
 
 
     /**
-     * Get data by request
+     * Get Tunisair response data by request
+     * Empty parameters will not be taken into account
+     *
      * @param request
      * @return
      */
@@ -53,20 +56,20 @@ public class TunisairFlightController {
             response = TunisairResponse.class,
             responseContainer = "List")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "departureDate", value = "Departure date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "returnDate", value = "Arrival date : ISO_LOCAL_DATE format (yyyy-mm_dd)", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "origin", value = "Origin country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "destination", value = "Destination country : ISO country code", required = false, dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "passengerCount", value = "Passenger count", required = false, dataType = "long", paramType = "query")
+            @ApiImplicitParam(name = "departureDate", value = "Departure date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-01-01", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "returnDate", value = "Arrival date : ISO_LOCAL_DATE format (yyyy-mm_dd)", example = "2022-01-01", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "origin", value = "Origin country : ISO country code", example = "Tunisair", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "destination", value = "Destination country : ISO country code", example = "TUN", required = false, dataType = "string", paramType = "query"),
+            @ApiImplicitParam(name = "passengerCount", value = "Passenger count", example = "FRA", required = false, dataType = "long", paramType = "query")
 
     })
     public ResponseEntity<List<TunisairResponse>> getByParams(@Valid TunisAirRequest request) {
         return ResponseEntity.ok(TunisAirModelResponseMapperHelperHolder.INSTANCE.modelToResponseListMapper(tunisairService.findByRequest(request)));
     }
 
-
     /**
      * Save new entry
+     *
      * @param tunisAirFlight
      * @return
      */

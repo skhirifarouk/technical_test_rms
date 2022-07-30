@@ -16,6 +16,7 @@ public class EntityResponseMapperHelper {
 
     /**
      * Map from entity to response
+     *
      * @param tunisAirFlightList
      * @return
      */
@@ -25,6 +26,7 @@ public class EntityResponseMapperHelper {
 
     /**
      * Map from entity list to response list
+     *
      * @param tunisAirFlight
      * @return
      */

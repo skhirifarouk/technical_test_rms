@@ -9,12 +9,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * Query specifications
+ * Query specifications : filter result from repository
  */
 public class TunisairSpecification {
 
     /**
      * Origin countains text
+     *
      * @param expression
      * @return
      */
@@ -24,6 +25,7 @@ public class TunisairSpecification {
 
     /**
      * Destination contains text
+     *
      * @param expression
      * @return
      */
@@ -33,6 +35,7 @@ public class TunisairSpecification {
 
     /**
      * Departure date from
+     *
      * @param expression
      * @return
      */
@@ -42,6 +45,7 @@ public class TunisairSpecification {
 
     /**
      * Arrival date to
+     *
      * @param expression
      * @return
      */
@@ -51,6 +55,7 @@ public class TunisairSpecification {
 
     /**
      * Passenger count maximum
+     *
      * @param expression
      * @return
      */

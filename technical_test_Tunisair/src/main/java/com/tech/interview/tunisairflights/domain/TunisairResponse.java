@@ -51,6 +51,33 @@ public class TunisairResponse {
     @ValidDateFormat(requireddateformat = DateFormat.ISO_LOCAL_DATE_TIME)
     private String arrivalDate;
 
+    /**
+     * No args constructor
+     */
+    public TunisairResponse() {
+    }
+
+    /**
+     * All args constructor
+     *
+     * @param airline
+     * @param price
+     * @param cabinclass
+     * @param departureAirportCode
+     * @param destinationAirportCode
+     * @param departureDate
+     * @param arrivalDate
+     */
+    public TunisairResponse(String airline, double price, String cabinclass, String departureAirportCode, String destinationAirportCode, String departureDate, String arrivalDate) {
+        this.airline = airline;
+        this.price = price;
+        this.cabinclass = cabinclass;
+        this.departureAirportCode = departureAirportCode;
+        this.destinationAirportCode = destinationAirportCode;
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
+    }
+
     public String getAirline() {
         return airline;
     }
