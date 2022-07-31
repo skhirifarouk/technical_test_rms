@@ -4,8 +4,10 @@ import com.tech.interview.rmsflights.domain.nouvelair.NouvelairRequest;
 import com.tech.interview.rmsflights.domain.nouvelair.NouvelairResponse;
 import com.tech.interview.rmsflights.exception.ResourceNotFoundException;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -21,5 +23,5 @@ public interface NouvelairServiceProxy {
      * @return
      */
     @GetMapping("/by_request")
-    ResponseEntity<List<NouvelairResponse>> getByRequest(@RequestParam("request") NouvelairRequest request) throws ResourceNotFoundException;
+    ResponseEntity<List<NouvelairResponse>> getByRequest(@SpringQueryMap NouvelairRequest request) throws ResourceNotFoundException;
 }

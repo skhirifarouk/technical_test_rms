@@ -4,8 +4,10 @@ import com.tech.interview.rmsflights.domain.tunisair.TunisAirRequest;
 import com.tech.interview.rmsflights.domain.tunisair.TunisairResponse;
 import com.tech.interview.rmsflights.exception.ResourceNotFoundException;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -21,6 +23,6 @@ public interface TunisairServiceProxy {
      * @return
      */
     @GetMapping("/by_request")
-    ResponseEntity<List<TunisairResponse>> getByRequest(@RequestParam("request") TunisAirRequest request) throws ResourceNotFoundException;
+    ResponseEntity<List<TunisairResponse>> getByRequest(@SpringQueryMap TunisAirRequest request) throws ResourceNotFoundException;
 
 }
