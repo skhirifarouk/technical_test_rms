@@ -38,7 +38,7 @@ RMS API uses CompletableFutures in order to execute both of the services simulta
 - Database : MySQL 8.0
 
 # Installation
-Launch "docker-compose up" in command prompt on the directory. This will deploy the project using configuration in docker-compose.yml
+Launch "docker-compose up --build" in command prompt on the directory. This will deploy the project using configuration in docker-compose.yml
 
 
 
